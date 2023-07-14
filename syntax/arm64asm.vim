@@ -223,9 +223,12 @@ syntax keyword AArch64Mnemonic XTN XTN2
 syntax keyword AArch64Mnemonic ZIP1 ZIP2
 
 syntax match AArch64Macro  /#[_a-zA-Z][_a-zA-Z0-9]*/
+
 syntax match AArch64Number /#-\?\d\+/
 syntax match AArch64Number /#([^)]\+)/
-" TODO(compnerd) add floating point and hexadecimal numeric literal
+syntax match AArch64Number /#\?-\?0x\x\+/
+syntax match AArch64Number /#\?-\?0b[01]\+/
+" TODO(compnerd) add floating point numeric literals
 
 " NOTE(compnerd) this must be matched after numerics
 syntax match AArch64Label /\d\{1,2\}[:fb]/
