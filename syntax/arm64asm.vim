@@ -267,7 +267,41 @@ syntax keyword AArch64Register s30 s31
 
 syntax keyword AArch64Register wzr xzr
 
-syntax keyword AArch64Register sp pc pstate
+syntax keyword AArch64Register sp pc pstate lr fp
+
+syntax keyword AArch64PState daif spsel currentel nzcv
+
+" https://developer.arm.com/documentation/den0024/latest/ARMv8-Registers/System-registers
+syntax keyword AArch64SystemRegister actlr_el1 actlr_el2 actlr_el3
+syntax keyword AArch64SystemRegister ccsidr_el1
+syntax keyword AArch64SystemRegister clidr_el1 clidr_el2 clidr_el3
+syntax keyword AArch64SystemRegister cntfrq_el0 cntpct_el0 cntkctl_el1
+syntax keyword AArch64SystemRegister cntp_cval_el0
+syntax keyword AArch64SystemRegister cpacr_el1
+syntax keyword AArch64SystemRegister csselr_el1
+syntax keyword AArch64SystemRegister cntp_ctl_el0
+syntax keyword AArch64SystemRegister ctr_el0
+syntax keyword AArch64SystemRegister dczid_el0
+syntax keyword AArch64SystemRegister elr_el1 elr_el2 elr_el3
+syntax keyword AArch64SystemRegister esr_el1 esr_el2 esr_el3
+syntax keyword AArch64SystemRegister far_el1 far_el2 far_el3
+syntax keyword AArch64SystemRegister fpcr fpsr
+syntax keyword AArch64SystemRegister hrc_el2
+syntax keyword AArch64SystemRegister mair_el1 mair_el2 mair_el3
+syntax keyword AArch64SystemRegister midr_el1
+syntax keyword AArch64SystemRegister mpidr_el1
+syntax keyword AArch64SystemRegister scr_el3
+syntax keyword AArch64SystemRegister sctlr_el0 sctlr_el1 sctlr_el2 sctlr_el3
+syntax keyword AArch64SystemRegister spsr_el1 spsr_el2 spsr_el3
+syntax keyword AArch64SystemRegister spsr_fiq spsr_irq spsr_und spsr_abt
+syntax keyword AArch64SystemRegister tcr_el1 tcr_el2 tcr_el3
+syntax keyword AArch64SystemRegister tpidr_el0 tpidr_el1 tpidr_el2 tpidr_el3
+syntax keyword AArch64SystemRegister tpidrro_el0
+syntax keyword AArch64SystemRegister ttbr0_el1 ttbr0_el2 ttbr0_el3
+syntax keyword AArch64SystemRegister ttbr1_el1
+syntax keyword AArch64SystemRegister vbar_el1 vbar_el2 vbar_el3
+syntax keyword AArch64SystemRegister vtcr_el2 vttbr_el2
+
 
 syntax match AArch64Type /[@%]function/
 syntax match AArch64Type /[@%]object/
@@ -286,6 +320,8 @@ highlight default link AArch64Modifier   Special
 highlight default link AArch64Number     Number
 highlight default link AArch64Operator   Operator
 highlight default link AArch64Register   StorageClass
+highlight default link AArch64PState     AArch64Register
+highlight default link AArch64SystemRegister AArch64Register
 highlight default link AArch64Type       Tag
 highlight default link AArch64TODO       Todo
 
