@@ -130,7 +130,7 @@ syntax keyword AArch64Mnemonic LDTRH LDTRSB LDTRSH LDTRSW LDUR LDURB LDURH
 syntax keyword AArch64Mnemonic LDURSB LDURSH LDURSW LDXP LDXR LDXRB LDXRH LSL
 syntax keyword AArch64Mnemonic LSLV LSR LSRV
 
-syntax keyword AArch64Mnemonic MADD MNEG MOV MOVK MOVN MOVZ MRS MSUB MUL MVN
+syntax keyword AArch64Mnemonic MADD MNEG MOV MOVK MOVN MOVZ MRS MSR MSUB MUL MVN
 
 syntax keyword AArch64Mnemonic NEGS NGC NGCS NOP
 
