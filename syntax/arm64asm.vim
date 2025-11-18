@@ -30,8 +30,9 @@ syntax case ignore
 syntax region AArch64Comment start="//" end="$" keepend contains=AArch64Special
 syntax region AArch64Comment start="/\*" end="\*/" contains=AArch64Special
 " MachO uses ; as a comment leader
-syntax region AArch64Comment start=";" end="$" contains=todo
+syntax region AArch64Comment start=";" end="$" contains=AArch64Special
 
+syntax keyword AArch64Directive .asciz .ascii .space
 syntax keyword AArch64Directive .align .p2align
 syntax keyword AArch64Directive .global .globl .type
 syntax keyword AArch64Directive .hword .word .xword .long .quad
@@ -102,6 +103,7 @@ syntax match AArch64Label /^[-_$.A-Za-z0-9]\+\s*:/
 " MachO uses L for the PrivateGloablPrefix, ELF uses .L
 syntax match AArch64Label /^\.\?L[-_$.A-Za-z0-9]\+\s*:/
 syntax match AArch64Label /^"[-_$.A-Za-z0-9 ]\+\s*":/
+syntax match AArch64String /"[^"]*"/
 
 syntax keyword AArch64Mnemonic ADC ADCS ADD ADDS ADR ADRP AND ANDS ASR ASRV AT
 
@@ -222,6 +224,8 @@ syntax keyword AArch64Mnemonic XTN XTN2
 
 syntax keyword AArch64Mnemonic ZIP1 ZIP2
 
+syntax match AArch64Mnemonic "\<[a-z]\+\(\.[0-9]*[bhdqsv]\)\>"
+
 syntax match AArch64Macro  /#[_a-zA-Z][_a-zA-Z0-9]*/
 
 syntax match AArch64Number /#-\?\d\+/
@@ -325,5 +329,6 @@ highlight default link AArch64SystemRegister AArch64Register
 highlight default link AArch64Type       Tag
 highlight default link AArch64TODO       Todo
 
-let b:current_syntax = "arm64asm"
+highlight default link AArch64String     String
 
+let b:current_syntax = "arm64asm"
