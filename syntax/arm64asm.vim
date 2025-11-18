@@ -328,6 +328,7 @@ highlight default link AArch64PState     AArch64Register
 highlight default link AArch64SystemRegister AArch64Register
 highlight default link AArch64Type       Tag
 highlight default link AArch64TODO       Todo
+
 highlight default link AArch64String     String
 
 let b:current_syntax = "arm64asm"
