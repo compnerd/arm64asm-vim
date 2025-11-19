@@ -86,8 +86,8 @@ syntax match AArch64Modifier /:gottprel_lo12:/ contained
 syntax match AArch64Modifier /:gottprel_g1:/ contained
 syntax match AArch64Modifier /:gottprel_g0_nc:/ contained
 
-syntax match AArch64Modifier /@PAGE/ contained
-syntax match AArch64Modifier /@PAGEOFF/ contained
+syntax match AArch64Modifier /@PAGE/
+syntax match AArch64Modifier /@PAGEOFF/
 
 syntax match AArch64Identifier /[-_$.A-Za-z0-9]\+/
 syntax match AArch64Identifier /:.*:[-_$.A-Za-z0-9]\+/ contains=AArch64Modifier
